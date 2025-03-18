@@ -2,54 +2,194 @@
 <html lang="en">
 <head>
     <title>DoodleCanvas</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+          crossorigin="anonymous">
+
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
-    <style>
-        .mycard
-        {
-            width: 150px;
-            height:200px;
-            background-size: cover;
-            padding: 0px 10px;
-        }
-        .series
-        {
-            display: grid;
-            grid-template-columns:20% 20% 20% 20% ;
-            grid-gap: 10px;
-        }
-        a:hover
-        {
-            color: brown;
-        }
-    </style>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpg" href="images/logo.jpg">
 </head>
 <body>
-    <div>
-        <p class="head">Orolin Arts</p>  
-        <div class="flow" >
-            <a href="index.html">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="dropdown">
-                <button class="dropbtn">LOGIN
-                <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="vendor.html">VENDOR</a>                      
-                    <a href="customer.html">CUSTOMER</a>
-                </div>
-            </div>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="about.html">ABOUT</a>
-            <a href="contact.html">CONTACT US</a>
-        </div> 
-        <div class="series justify-content-center">
-            <img src="images/16_Mar_2023_23_57_18.jpg" class="mycard">
-            <img src="images/17_Mar_2023_00_14_52.jpg" class="mycard">
-            <img src="images/17_Mar_2023_00_16_16.jpg" class="mycard">
-            <img src="images/18_Mar_2023_02_22_49.jpg" class="mycard">
+    <header>
+        <a href="#" class="name">Doodlee</a>
+        <div class="navbar">
+            <a href="#">HOME</a>
+            <a href="shop.html">SHOP</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT US</a>
+            <a href="cart"><i class="fa fa-shopping-cart"></i></a>
         </div>
+    </header>
+
+    <!--Home Page-->
+    <div id="home" class="home-page">
+        <div id="typing-text" class="typing"></div>
+    </div>
+    
+    <!--Products-->
+    <div id="product" class="products">
+        <h1>Featured Products</h1>
+        <!--row1-->
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/1.jpeg" alt="Product 1">
+                <p>White flower</p>
+                <div class="product-text">
+                    <p>$29.99</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+            </div>
+    
+            <div class="product">
+                <img src="images/22.jpg" alt="Product 2">
+                <p>Butterflies</p>
+                <div class="product-text">
+                    <p>$29.99</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+            </div>
+    
+            <div class="product">
+                <img src="images/10.jpeg" alt="Product 3">
+                <p>In the woods</p>
+                <div class="product-text">
+                    <p>$29.99</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+            </div>
+    
+            <div class="product">
+                <img src="images/4.jpeg" alt="Product 4">
+                <p>Vibrant bird</p>
+                <div class="product-text">
+                    <p>$29.99</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+            </div>
+        </div>
+        <!--row2-->
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/5.jpeg" alt="Product 1">
+                <p>Beach sunset</p>
+                <div class="product-text">
+                    <p>$29.99</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+            </div>
+    
+            <div class="product">
+                <img src="images/11.jpeg" alt="Product 2">
+                <p>Tree</p>
+                <div class="product-text">
+                    <p>$29.99</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+            </div>
+    
+            <div class="product">
+                <img src="images/17.jpeg" alt="Product 3">
+                <p>Pink</p>
+                <div class="product-text">
+                    <p>$29.99</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+            </div>
+    
+            <div class="product">
+                <img src="images/20.jpeg" alt="Product 4">
+                <p>Winter</p>
+                <div class="product-text">
+                    <p>$29.99</p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+            </div>
+        </div>
+        <a href="shop.html" class="btn">View more</a>
+    </div>
+
+    <!--About section-->
+    <div id="about" class="about">
+        <h1>About Us</h1>
+        <p>Welcome to <b>Doodle Art</b>, the ultimate spot for hand-drawn creativity! We’re all about <b>one-of-a-kind doodles, quirky sketches, and original hand-drawn art</b>—made by artists who love to let their pens run wild.</p>
+
+        <p>At <b>Doodle Art</b>, we believe that every squiggle, swirl, and sketch has a story. That’s why we’ve built a space where artists can sell their work, and art lovers can find <b>unique, handcrafted pieces</b> that you won’t see anywhere else.</p>
+
+        <h3>Why Shop With Us?</h3>
+
+        <div>
+            <span><b>Authentic Hand-Drawn Art</b> – No AI, no prints—just pure creativity.</span>
+        </div>
+
+        <div>
+            <span><b>Support Real Artists</b> – Every purchase helps independent creators.</span>
+        </div>
+
+        <div>
+            <span><b>Custom Commissions</b> – Get a doodle that’s made just for you!</span>
+        </div>
+
+        <p>So, whether you're looking for a <b>quirky doodle, a custom illustration, or the perfect gift,</b> you’re in the right place. Start exploring and let’s make the world more doodly!</p>
+
+        <p><b>Stay creative. Stay doodly.</b></p>
     </div>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const textLines = [
+        "Hey there... ",
+        "Welcome to Doodle...",
+        "Explore...",
+        "Wishlist...",
+        "Shop..."
+    ];
+
+    let index = 0;
+    let charIndex = 0;
+    const typingSpeed = 100; // Speed of typing
+    const erasingSpeed = 50; // Speed of erasing
+    const delayBetweenLines = 1000; // Standard delay before erasing
+    const delayAfterLastLine = 2000; // Longer pause after "Shop"
+    const typingElement = document.getElementById("typing-text");
+
+    function type() {
+        if (charIndex < textLines[index].length) {
+            typingElement.innerHTML = textLines[index].substring(0, charIndex + 1);
+            charIndex++;
+            setTimeout(type, typingSpeed);
+        } else {
+            setTimeout(erase, delayBetweenLines);
+        }
+    }
+
+    function erase() {
+        if (charIndex > 0) {
+            typingElement.innerHTML = textLines[index].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, erasingSpeed);
+        } else {
+            // If it's the last sentence, wait longer before restarting
+            index = (index + 1) % textLines.length;
+            const delay = (index === 0) ? delayAfterLastLine : typingSpeed;
+            setTimeout(type, delay);
+        }
+    }
+
+    type();
+});
+
+    </script>
 </html>
-     
