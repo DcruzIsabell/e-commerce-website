@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shop | Doodlee</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <a href="index.html" class="name">Doodlee</a>
+    <div class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="shop.html" class="active">SHOP</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT US</a>
+        <a href="cart.html" id="cart-link" style="display:none;"><i class="fa fa-shopping-cart"></i> <span class="badge" id="cart-count">0</span></a>
+    </div>
+</header>
+
+<section id="shop">
+    <div class="container">
+        <h1>Shop Our Collection</h1>
+        <div class="d-flex mb-4 flex-wrap justify-content-between">
+            <div class="d-flex gap-2 ">
+                <select id="sortSelect" class="form-select">
+                    <option value="default">Sort by</option>
+                    <option value="lowToHigh">Price: Low to High</option>
+                    <option value="highToLow">Price: High to Low</option>
+                </select>
+                <select id="categorySelect" class="form-select">
+                    <option value="all">Category</option>
+                    <option value="Nature">Nature</option>
+                    <option value="Abstract">Abstract</option>
+                    <option value="Animals">Animals</option>
+                    <option value="Custom">Custom</option>
+                </select>
+            </div>
+            <input type="text" id="searchInput" class="form-control" placeholder="Search doodles..." style="width: 250px;">
+        </div>
+
+        <div id="productGrid" class="row gy-4"></div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Doodlee | Stay creative. Stay doodly.</p>
+</footer>
+
+<script>
+// Product Data
+const products = [
+    { name: "White Flower", price: 24.99, category: "Nature", image: "images/1.jpeg" },
+    { name: "Butterflies", price: 34.50, category: "Animals", image: "images/22.jpg" },
+    { name: "In the Woods", price: 39.99, category: "Nature", image: "images/10.jpeg" },
+    { name: "Vibrant Bird", price: 28.75, category: "Animals", image: "images/4.jpeg" },
+    { name: "Beach Sunset", price: 31.99, category: "Nature", image: "images/5.jpeg" },
+    { name: "Tree", price: 26.50, category: "Nature", image: "images/11.jpeg" },
+    { name: "Pink", price: 33.25, category: "Abstract", image: "images/17.jpeg" },
+    { name: "Winter", price: 37.99, category: "Custom", image: "images/20.jpeg" },
+    { name: "Golden Leaves", price: 29.95, category: "Nature", image: "images/6.jpeg" },
+    { name: "Ocean Waves", price: 32.49, category: "Nature", image: "images/7.jpeg" },
+    { name: "Red Fox", price: 36.75, category: "Animals", image: "images/8.jpeg" },
+    { name: "Abstract Swirl", price: 27.50, category: "Abstract", image: "images/9.jpeg" },
+    { name: "Mountain Peak", price: 38.00, category: "Nature", image: "images/12.jpeg" },
+    { name: "Forest Path", price: 30.25, category: "Nature", image: "images/13.jpeg" },
+    { name: "Colorful Bird", price: 35.50, category: "Animals", image: "images/14.jpeg" },
+    { name: "Sunset Silhouette", price: 33.75, category: "Nature", image: "images/15.jpeg" },
+    { name: "Galaxy Art", price: 40.00, category: "Abstract", image: "images/16.jpeg" },
+    { name: "Floral Pattern", price: 28.25, category: "Nature", image: "images/18.jpeg" },
+    { name: "Cute Cat", price: 31.50, category: "Animals", image: "images/19.jpeg" },
+    { name: "Winter Wonderland", price: 39.25, category: "Custom", image: "images/21.jpeg" },
+    { name: "Tropical Palm", price: 27.99, category: "Nature", image: "images/23.jpg" },
+    { name: "Dreamy Clouds", price: 36.00, category: "Abstract", image: "images/24.jpg" },
+    { name: "Bird in Flight", price: 29.50, category: "Animals", image: "images/25.jpg" }
+];
+
+// CART
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function updateCartCount() {
+    const cartLink = document.getElementById("cart-link");
+    const count = document.getElementById("cart-count");
+    count.textContent = cart.length;
+    cartLink.style.display = cart.length > 0 ? "inline-block" : "none";
+}
+
+// RENDER PRODUCTS
+function renderProducts(items) {
+    const grid = document.getElementById("productGrid");
+    grid.innerHTML = "";
+    if(items.length === 0) {
+        grid.innerHTML = `<p class="text-center text-muted">No products found.</p>`;
+        return;
+    }
+    items.forEach(p => {
+        const col = document.createElement("div");
+        col.className = "col-md-3 col-sm-6";
+        col.innerHTML = `
+            <div class="product">
+                <img src="${p.image}" alt="${p.name}">
+                <p>${p.name}</p>
+                <div class="product-text">
+                    <p>$${p.price.toFixed(2)}</p>
+                    <a href="#" class="btn add-to-cart">Add to Cart</a>
+                </div>
+            </div>
+        `;
+        col.querySelector(".add-to-cart").addEventListener("click", (e) => {
+            e.preventDefault();
+            cart.push(p);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount();
+        });
+        grid.appendChild(col);
+    });
+}
+
+// FILTER & SORT
+function updateProducts() {
+    let filtered = [...products];
+    const category = document.getElementById("categorySelect").value;
+    const search = document.getElementById("searchInput").value.toLowerCase();
+    const sort = document.getElementById("sortSelect").value;
+
+    if(category !== "all") filtered = filtered.filter(p => p.category === category);
+    if(search) filtered = filtered.filter(p => p.name.toLowerCase().includes(search));
+    if(sort === "lowToHigh") filtered.sort((a,b)=>a.price-b.price);
+    if(sort === "highToLow") filtered.sort((a,b)=>b.price-a.price);
+
+    renderProducts(filtered);
+}
+
+// INIT
+document.addEventListener("DOMContentLoaded", () => {
+    renderProducts(products);
+    updateCartCount();
+
+    document.getElementById("sortSelect").addEventListener("change", updateProducts);
+    document.getElementById("categorySelect").addEventListener("change", updateProducts);
+    document.getElementById("searchInput").addEventListener("input", updateProducts);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us | Doodlee</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpg" href="images/logo.jpg">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="name">Doodlee</a>
+        <div class="navbar">
+            <a href="index.html">HOME</a>
+            <a href="shop.html">SHOP</a>
+            <a href="about.html" class="active">ABOUT</a>
+            <a href="contact.html">CONTACT US</a>
+            <a href="cart.html" id="cart-link" style="display: none;"><i class="fa fa-shopping-cart"></i></a>
+
+            <!-- Login Dropdown -->
+            <div class="dropdown">
+                <a href="#" class="dropbtn">LOGIN <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="vendor.html">Vendor</a>
+                    <a href="customer.html">Customer</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about py-5">
+        <div class="container">
+            <h1 class="text-center mb-5">About Us</h1>
+
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <img src="images/bg1.jpg" alt="About Doodlee" class="img-fluid rounded-3 shadow">
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        Welcome to <b>Doodlee</b>, your creative home for <b>hand-drawn art</b> and unique doodles made by passionate artists around the world. 
+                        Every stroke, swirl, and sketch here is created with pure imagination — no AI, no prints, just real artistry.
+                    </p>
+                    <p>
+                        We believe art should feel <b>personal</b>, not mass-produced. That’s why our platform connects 
+                        talented independent doodlers with art lovers who appreciate originality and creativity.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div class="text-center mb-5">
+                <h3>Why Shop With Us?</h3>
+            </div>
+
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <div class="p-4 shadow rounded-3 bg-light h-100">
+                        <i class="fa fa-paint-brush fa-2x mb-3"></i>
+                        <h5>Authentic Hand-Drawn Art</h5>
+                        <p>No AI or prints — only original doodles crafted by real artists.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-4 shadow rounded-3 bg-light h-100">
+                        <i class="fa fa-users fa-2x mb-3"></i>
+                        <h5>Support Independent Artists</h5>
+                        <p>Every purchase directly supports the creator behind the artwork.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-4 shadow rounded-3 bg-light h-100">
+                        <i class="fa fa-heart fa-2x mb-3"></i>
+                        <h5>Custom Commissions</h5>
+                        <p>Want something special? Get a personalized doodle just for you!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Closing Message -->
+            <div class="text-center mt-5">
+                <p class="lead">
+                    Whether you're looking for a quirky doodle, a unique gift, or a piece of art that makes you smile — 
+                    <b>Doodlee</b> has something just for you.
+                </p>
+                <p><b>Stay creative. Stay doodly.</b></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>© 2025 Doodlee | Stay creative. Stay doodly.</p>
+    </footer>
+
+    <!-- Script: Show Cart Only When Logged In -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const isLoggedIn = localStorage.getItem("loggedIn");
+            const cartLink = document.getElementById("cart-link");
+            if (isLoggedIn === "true") {
+                cartLink.style.display = "inline-block";
+            }
+        });
+    </script>
+</body>
+</html>
