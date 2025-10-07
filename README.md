@@ -1,27 +1,28 @@
-Simple E-Commerce Website
-Overview
+# Simple E-Commerce Website
 
-This is a static HTML/CSS/JS website. No server setup or installation is required. You can run it directly in a web browser.
+## Overview
+This is a static HTML/CSS/JS website. No backend or npm setup is required. The website can be run directly in a web browser.
 
-How to Run
-Option 1: Using VS Code (Recommended)
+---
 
-Open the project folder in Visual Studio Code.
+## How to Run
 
-Make sure the Live Server extension is installed.
+### Option 1: Using VS Code (Recommended)
+1. Open the project folder in **Visual Studio Code**.  
+2. Ensure the **Live Server extension** is installed.  
+3. Open `index.html`.  
+4. Right-click and select **"Open with Live Server"**.  
+5. The website will open in your browser and automatically refresh as you make changes.
 
-Open index.html.
+### Option 2: Directly in Browser
+1. Navigate to the project folder.  
+2. Double-click `index.html`.  
+3. The website will open in your default browser.  
 
-Right-click and select "Open with Live Server".
+> ⚠️ Note: Some JavaScript features may not work perfectly when opened directly without a server.
 
-Your website will open in a browser. Any changes you make will automatically refresh.
-
-Option 2: Directly in Browser
-
-Navigate to the project folder.
-
-Double-click index.html.
-
-The website will open in your default web browser.
-
-⚠️ Note: Some JavaScript features may not work perfectly when opened directly without a server.
+### Option 3: Using a Simple Local Server (Optional)
+If you have Python installed:  
+```bash
+cd path/to/project
+python -m http.server 8000
