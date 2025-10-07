@@ -28,100 +28,112 @@
         <div class="navbar">
             <a href="#">HOME</a>
             <a href="shop.html">SHOP</a>
-            <a href="#about">ABOUT</a>
-            <a href="#contact">CONTACT US</a>
-            <a href="cart"><i class="fa fa-shopping-cart"></i></a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT US</a>
+            <a href="cart.html" id="cart-link" style="display:none;"><i class="fa fa-shopping-cart"></i></a>
+
+            <!-- Login Dropdown -->
+            <div class="dropdown">
+                <a href="#" class="dropbtn">LOGIN <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="vendor.html">Vendor</a>
+                    <a href="customer.html">Customer</a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!--Home Page-->
+    <!-- Home Page -->
     <div id="home" class="home-page">
         <div id="typing-text" class="typing"></div>
     </div>
     
-    <!--Products-->
+    <!-- Products -->
     <div id="product" class="products">
         <h1>Featured Products</h1>
-        <!--row1-->
+        
+        <!-- Row 1 -->
         <div class="product-grid">
             <div class="product">
-                <img src="images/1.jpeg" alt="Product 1">
-                <p>White flower</p>
+                <img src="images/1.jpeg" alt="White Flower">
+                <p>White Flower</p>
                 <div class="product-text">
-                    <p>$29.99</p>
+                    <p>$24.99</p>
                     <a href="#" class="btn">Buy Now</a>
                 </div>
             </div>
-    
+
             <div class="product">
-                <img src="images/22.jpg" alt="Product 2">
+                <img src="images/22.jpg" alt="Butterflies">
                 <p>Butterflies</p>
                 <div class="product-text">
-                    <p>$29.99</p>
+                    <p>$34.50</p>
                     <a href="#" class="btn">Buy Now</a>
                 </div>
             </div>
-    
+
             <div class="product">
-                <img src="images/10.jpeg" alt="Product 3">
-                <p>In the woods</p>
+                <img src="images/10.jpeg" alt="In the Woods">
+                <p>In the Woods</p>
                 <div class="product-text">
-                    <p>$29.99</p>
+                    <p>$39.99</p>
                     <a href="#" class="btn">Buy Now</a>
                 </div>
             </div>
-    
+
             <div class="product">
-                <img src="images/4.jpeg" alt="Product 4">
-                <p>Vibrant bird</p>
+                <img src="images/4.jpeg" alt="Vibrant Bird">
+                <p>Vibrant Bird</p>
                 <div class="product-text">
-                    <p>$29.99</p>
+                    <p>$28.75</p>
                     <a href="#" class="btn">Buy Now</a>
                 </div>
             </div>
         </div>
-        <!--row2-->
+
+        <!-- Row 2 -->
         <div class="product-grid">
             <div class="product">
-                <img src="images/5.jpeg" alt="Product 1">
-                <p>Beach sunset</p>
+                <img src="images/5.jpeg" alt="Beach Sunset">
+                <p>Beach Sunset</p>
                 <div class="product-text">
-                    <p>$29.99</p>
+                    <p>$31.99</p>
                     <a href="#" class="btn">Buy Now</a>
                 </div>
             </div>
-    
+
             <div class="product">
-                <img src="images/11.jpeg" alt="Product 2">
+                <img src="images/11.jpeg" alt="Tree">
                 <p>Tree</p>
                 <div class="product-text">
-                    <p>$29.99</p>
+                    <p>$26.50</p>
                     <a href="#" class="btn">Buy Now</a>
                 </div>
             </div>
-    
+
             <div class="product">
-                <img src="images/17.jpeg" alt="Product 3">
+                <img src="images/17.jpeg" alt="Pink">
                 <p>Pink</p>
                 <div class="product-text">
-                    <p>$29.99</p>
+                    <p>$33.25</p>
                     <a href="#" class="btn">Buy Now</a>
                 </div>
             </div>
-    
+
             <div class="product">
-                <img src="images/20.jpeg" alt="Product 4">
+                <img src="images/20.jpeg" alt="Winter">
                 <p>Winter</p>
                 <div class="product-text">
-                    <p>$29.99</p>
+                    <p>$37.99</p>
                     <a href="#" class="btn">Buy Now</a>
                 </div>
             </div>
         </div>
-        <a href="shop.html" class="btn">View more</a>
+
+        <a href="shop.html" class="btn">View More</a>
     </div>
 
-    <!--About section-->
+    <!-- About Section -->
     <div id="about" class="about">
         <h1>About Us</h1>
         <p>Welcome to <b>Doodle Art</b>, the ultimate spot for hand-drawn creativity! We’re all about <b>one-of-a-kind doodles, quirky sketches, and original hand-drawn art</b>—made by artists who love to let their pens run wild.</p>
@@ -133,11 +145,9 @@
         <div>
             <span><b>Authentic Hand-Drawn Art</b> – No AI, no prints—just pure creativity.</span>
         </div>
-
         <div>
             <span><b>Support Real Artists</b> – Every purchase helps independent creators.</span>
         </div>
-
         <div>
             <span><b>Custom Commissions</b> – Get a doodle that’s made just for you!</span>
         </div>
@@ -146,50 +156,61 @@
 
         <p><b>Stay creative. Stay doodly.</b></p>
     </div>
-</body>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const textLines = [
-        "Hey there... ",
-        "Welcome to Doodle...",
-        "Explore...",
-        "Wishlist...",
-        "Shop..."
-    ];
 
-    let index = 0;
-    let charIndex = 0;
-    const typingSpeed = 100; // Speed of typing
-    const erasingSpeed = 50; // Speed of erasing
-    const delayBetweenLines = 1000; // Standard delay before erasing
-    const delayAfterLastLine = 2000; // Longer pause after "Shop"
-    const typingElement = document.getElementById("typing-text");
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>© 2025 Doodlee | Stay creative. Stay doodly.</p>
+    </footer>
 
-    function type() {
-        if (charIndex < textLines[index].length) {
-            typingElement.innerHTML = textLines[index].substring(0, charIndex + 1);
-            charIndex++;
-            setTimeout(type, typingSpeed);
-        } else {
-            setTimeout(erase, delayBetweenLines);
+    <!-- Typing Effect & Cart Logic -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const textLines = [
+                "Hey there...",
+                "Welcome to Doodle...",
+                "Explore...",
+                "Wishlist...",
+                "Shop..."
+            ];
+
+            let index = 0;
+            let charIndex = 0;
+            const typingSpeed = 100;
+            const erasingSpeed = 50;
+            const delayBetweenLines = 1000;
+            const delayAfterLastLine = 2000;
+            const typingElement = document.getElementById("typing-text");
+
+            function type() {
+                if (charIndex < textLines[index].length) {
+                    typingElement.innerHTML = textLines[index].substring(0, charIndex + 1);
+                    charIndex++;
+                    setTimeout(type, typingSpeed);
+                } else {
+                    setTimeout(erase, delayBetweenLines);
+                }
+            }
+
+            function erase() {
+                if (charIndex > 0) {
+                    typingElement.innerHTML = textLines[index].substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(erase, erasingSpeed);
+                } else {
+                    index = (index + 1) % textLines.length;
+                    const delay = (index === 0) ? delayAfterLastLine : typingSpeed;
+                    setTimeout(type, delay);
+                }
+            }
+
+            type();
+        });
+
+        // Show cart only when logged in
+        const userLoggedIn = localStorage.getItem('loggedInUser');
+        if (userLoggedIn) {
+            document.getElementById('cart-link').style.display = 'inline-block';
         }
-    }
-
-    function erase() {
-        if (charIndex > 0) {
-            typingElement.innerHTML = textLines[index].substring(0, charIndex - 1);
-            charIndex--;
-            setTimeout(erase, erasingSpeed);
-        } else {
-            // If it's the last sentence, wait longer before restarting
-            index = (index + 1) % textLines.length;
-            const delay = (index === 0) ? delayAfterLastLine : typingSpeed;
-            setTimeout(type, delay);
-        }
-    }
-
-    type();
-});
-
     </script>
+</body>
 </html>

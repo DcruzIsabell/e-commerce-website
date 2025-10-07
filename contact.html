@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us | Doodlee</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpg" href="images/logo.jpg">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="name">Doodlee</a>
+        <div class="navbar">
+            <a href="index.html">HOME</a>
+            <a href="shop.html">SHOP</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html" class="active">CONTACT US</a>
+            <a href="cart.html" id="cart-link" style="display: none;"><i class="fa fa-shopping-cart"></i></a>
+
+            <!-- Login Dropdown -->
+            <div class="dropdown">
+                <a href="#" class="dropbtn">LOGIN <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="vendor.html">Vendor</a>
+                    <a href="customer.html">Customer</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container text-center py-5">
+            <h1>Contact Us</h1>
+            <p class="lead mt-3">
+                We’re always here to help you out with any questions or feedback!
+            </p>
+
+            <div class="contact-info mt-5">
+                <p><i class="fa fa-envelope"></i> Email us at: <b>handdrawings@gmail.com</b></p>
+                <p><i class="fa fa-phone"></i> Phone: <b>+61 6745 6321</b></p>
+                <p><i class="fa fa-map-marker"></i> Location: Sydney, Australia</p>
+            </div>
+
+            <div class="contact-form mt-4">
+                <h3>Send us a message</h3>
+                <form class="mt-3 w-50 mx-auto">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>© 2025 Doodlee | Stay creative. Stay doodly.</p>
+    </footer>
+
+    <!-- Script to Show Cart When Logged In -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const isLoggedIn = localStorage.getItem("loggedIn");
+            const cartLink = document.getElementById("cart-link");
+            if (isLoggedIn === "true") {
+                cartLink.style.display = "inline-block";
+            }
+        });
+    </script>
+</body>
+</html>
